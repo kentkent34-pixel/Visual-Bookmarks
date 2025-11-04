@@ -1,1 +1,130 @@
-tt
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隱私權政策 - 書籤縮圖管理器 Pro</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            color: #111;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #222;
+            margin-top: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #444;
+            margin-top: 25px;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .contact {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>書籤縮圖管理器 Pro 隱私權政策</h1>
+        <p><strong>最後更新日期：</strong> 2025 年 11 月 4 日</p>
+
+        <p>感謝您使用「書籤縮圖管理器 Pro」（以下簡稱「本擴充功能」）。我們非常重視您的隱私權。本政策旨在說明我們如何收集、使用和保護您的資訊。</p>
+
+        <h2>1. 我們收集的資訊</h2>
+        <p>為了提供核心功能，本擴充功能會處理以下兩種類型的資料：</p>
+
+        <h3>A. 您主動提供的個人資訊 (用於雲端同步)</h3>
+        <ul>
+            <li><strong>電子郵件地址 (Email Address)</strong>：
+                <ul>
+                    <li><strong>收集時機</strong>：當您選擇使用「Google 登入」以啟用雲端同步功能時。</li>
+                    <li><strong>收集目的</strong>：您的 Email 地址將作為您在 Supabase 雲端資料庫中的唯一帳戶 ID，以便安全地儲存和同步您的書籤縮圖。</li>
+                    <li><strong>如果您不使用登入功能</strong>：本擴充功能（作為匿名使用者）<strong>不會</strong>收集或傳輸您的任何個人資訊。</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>B. 您的擴充功能資料 (核心功能)</h3>
+        <ul>
+            <li><strong>書籤縮圖 (Bookmark Thumbnails)</strong>：
+                <ul>
+                    <li><strong>收集時機</strong>：當您主動使用「截圖」、「自訂縮圖」 或「元素截圖」 功能時，產生的圖片資料。</li>
+                    <li><strong>儲存方式（本地）</strong>：縮圖會儲存在您瀏覽器本地的 IndexedDB 資料庫中。這是為了離線存取和提升效能。</li>
+                    <li><strong>儲存方式（雲端）</strong>：如果您選擇登入，這些縮圖資料將會被上傳並安全地儲存在 Supabase 雲端資料庫，以便在您的不同裝置間同步。</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>2. 我們如何使用您的資訊</h2>
+        <ol>
+            <li><strong>提供核心功能</strong>：您的 Email 和縮圖資料僅用於提供、維護和改進書籤縮圖的雲端同步與備份功能。</li>
+            <li><strong>身分驗證</strong>：使用您的 Email 來驗證您的身分，確保您只能存取您自己的資料。</li>
+            <li><strong>本地儲存</strong>：您的本地設定（例如側邊欄是否收合）和 Supabase 登入 Session 會儲存在 <code>chrome.storage</code> 中，以便保持登入狀態和記住您的偏好設定。</li>
+        </ol>
+
+        <h2>3. 資料分享與第三方</h2>
+        <p><strong>我們承諾，絕不會將您的個人資訊（Email）或您的使用者內容（書籤縮圖）出售、交易、出租或以任何形式分享給任何第三方。</strong></p>
+        <p>您的資料僅在以下服務提供者之間傳輸，以實現核心功能：</p>
+        <ul>
+            <li><strong>Supabase</strong>：作為我們的後端服務提供商 (BaaS)，用於安全地儲存您的帳戶資訊和加密的縮圖資料。</li>
+            <li><strong>Google (OAuth)</strong>：僅在您主動點擊登入時，用於 <code>chrome.identity</code> 驗證您的 Google 帳戶身分。</li>
+        </ul>
+
+        <h2>4. 權限使用說明</h2>
+        <p>本擴充功能在 <code>manifest.json</code> 中請求了以下權限，所有權限僅用於實現核心功能：</p>
+        <ul>
+            <li><strong><code>bookmarks</code></strong>：核心權限。用於讀取和管理您的書籤，以便顯示它們並附加縮圖。</li>
+            <li><strong><code>storage</code></strong>：用於儲存您的本地設定和登入狀態。</li>
+            <li><strong><code>unlimitedStorage</code></strong>：核心權限。用於在本地 IndexedDB 儲存您的縮圖圖片，因為預設的 5MB 限制不足。</li>
+            <li><strong><code>tabs</code> / <code>activeTab</code></strong>：用於「新增此頁面」 和「自動截圖」 功能，以取得當前分頁的 URL 和標題。</li>
+            <li><strong><code>scripting</code></strong> 與 <strong><code>host_permissions: ["&lt;all_urls&gt;"]</code></strong>：用於「自訂區域截圖」 功能。必須擁有這兩個權限，才能將選取工具 (<code>contentScript.js</code>) 注入到您希望截圖的網頁上。<strong>我們<em>不會</em>使用此權限讀取或監控您的任何瀏覽活動。</strong></li>
+            <li><strong><code>identity</code></strong>：僅用於「使用 Google 登入」 功能。</li>
+            <li><strong><code>contextMenus</code></strong>：用於提供右鍵快捷操作（例如「自動截圖」）。</li>
+            <li><strong><code>notifications</code></strong>：用於在截圖成功或失敗時顯示桌面通知。</li>
+            <li><strong><code>downloads</code></strong>：用於「匯出備份」 功能，讓您可以下載您的資料。</li>
+            <li><strong><code>sidePanel</code></strong>：允許您在瀏覽器側邊面板中開啟本擴充功能。</li>
+        </ul>
+
+        <h2>5. 政策變更</h2>
+        <p>我們可能會不時更新本隱私權政策。任何變更都將發布在此頁面上，我們鼓勵您定期查看。</p>
+
+        <h2>6. 聯繫我們</h2>
+        <p class="contact">如果您對本隱私權政策有任何疑問，請透過以下方式聯繫我們：<br>
+            <strong>[請在這裡填入您的聯繫 Email]</strong>
+        </p>
+    </div>
+</body>
+</html>
