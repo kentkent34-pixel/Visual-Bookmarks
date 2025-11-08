@@ -59,7 +59,7 @@
 <body>
     <div class="container">
         <h1>視覺書籤 隱私權政策</h1>
-        <p><strong>最後更新日期：</strong> 2025 年 11 月 4 日</p>
+        <p><strong>最後更新日期：</strong> 2025 年 11 月 9 日</p>
 
         <p>感謝您使用「視覺書籤」（以下簡稱「本擴充功能」）。我們非常重視您的隱私權。本政策旨在說明我們如何收集、使用和保護您的資訊。</p>
 
@@ -92,7 +92,7 @@
         <ol>
             <li><strong>提供核心功能</strong>：您的 Email 和縮圖資料僅用於提供、維護和改進書籤縮圖的雲端同步與備份功能。</li>
             <li><strong>身分驗證</strong>：使用您的 Email 來驗證您的身分，確保您只能存取您自己的資料。</li>
-            <li><strong>本地儲存</strong>：您的本地設定（例如側邊欄是否收合）和 Supabase 登入 Session 會儲存在 <code>chrome.storage</code> 中，以便保持登入狀態和記住您的偏好設定。</li>
+            <li><strong>本地儲存</strong>：您的本地設定（例如側邊欄是否收合）會儲存在您瀏覽器的 <code>localStorage</code> 中，而 Supabase 登入 Session 會儲存在 <code>chrome.storage</code> 中，以便保持登入狀態和記住您的偏好設定。</li>
         </ol>
 
         <h2>3. 資料分享與第三方</h2>
@@ -107,14 +107,13 @@
         <p>本擴充功能在 <code>manifest.json</code> 中請求了以下權限，所有權限僅用於實現核心功能：</p>
         <ul>
             <li><strong><code>bookmarks</code></strong>：核心權限。用於讀取和管理您的書籤，以便顯示它們並附加縮圖。</li>
-            <li><strong><code>storage</code></strong>：用於儲存您的本地設定和登入狀態。</li>
+            <li><strong><code>storage</code></strong>：用於儲存您的本地設定和登入狀態 (例如 Supabase Session)。</li>
             <li><strong><code>unlimitedStorage</code></strong>：核心權限。用於在本地 IndexedDB 儲存您的縮圖圖片，因為預設的 5MB 限制不足。</li>
             <li><strong><code>tabs</code> / <code>activeTab</code></strong>：用於「新增此頁面」 和「自動截圖」 功能，以取得當前分頁的 URL 和標題。</li>
             <li><strong><code>scripting</code></strong> 與 <strong><code>host_permissions: ["&lt;all_urls&gt;"]</code></strong>：用於「自訂區域截圖」 功能。必須擁有這兩個權限，才能將選取工具 (<code>contentScript.js</code>) 注入到您希望截圖的網頁上。<strong>我們<em>不會</em>使用此權限讀取或監控您的任何瀏覽活動。</strong></li>
             <li><strong><code>identity</code></strong>：僅用於「使用 Google 登入」 功能。</li>
             <li><strong><code>contextMenus</code></strong>：用於提供右鍵快捷操作（例如「自動截圖」）。</li>
             <li><strong><code>notifications</code></strong>：用於在截圖成功或失敗時顯示桌面通知。</li>
-            <li><strong><code>downloads</code></strong>：用於「匯出備份」 功能，讓您可以下載您的資料。</li>
             <li><strong><code>sidePanel</code></strong>：允許您在瀏覽器側邊面板中開啟本擴充功能。</li>
         </ul>
 
